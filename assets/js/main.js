@@ -20,6 +20,80 @@
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
+  // Lightweight bilingual interface. User selection is remembered on this browser.
+  const translations = {
+    id: {
+      "a[href='#about']":"Profil", "a[href='#research']":"Riset", "a[href='#locations']":"Lokasi Riset", "a[href='#publications']":"Publikasi", "a[href='#media']":"Media", "a[href='#learning']":"Pembelajaran", "a[href='#contact']":"Kontak <span>↗</span>",
+      ".eyebrow":"DOSEN · PENELITI · PRAKTISI GEOSPASIAL",
+      "h1":"Memahami bumi melalui <em>data geospasial.</em>",
+      ".hero-lead":"Saya Agus Aris, akademisi di bidang Penginderaan Jauh dan Sistem Informasi Geografis. Saya mengeksplorasi pemanfaatan citra satelit, GIS, dan kecerdasan buatan untuk memahami perubahan lingkungan, ekosistem pesisir, dan budidaya rumput laut.",
+      ".hero-actions .button":"Jelajahi bidang riset <span>↘</span>",
+      ".hero-actions > .text-link:first-of-type":"Diskusi kolaborasi <span>↗</span>",
+      ".hero-login-link":"Login untuk memperbarui website <span>↗</span>",
+      ".section-about .eyebrow-green":"TENTANG SAYA", ".section-about h2":"Riset yang berangkat dari <em>pertanyaan nyata.</em>",
+      ".lead-copy":"Fokus saya adalah mengubah data observasi bumi menjadi informasi spasial yang dapat dipahami, diuji, dan digunakan.",
+      ".section-research .section-heading h2":"Empat arah <em>eksplorasi.</em>",
+      ".section-research .section-summary":"Tema yang menghubungkan metode geospasial dengan kebutuhan pemantauan lingkungan dan pengambilan keputusan.",
+      ".section-locations .section-heading h2":"Riset pada <em>peta.</em>",
+      ".section-locations .section-summary":"Peta sebaran lokasi penelitian. Setiap titik dapat memuat nama lokasi, ringkasan studi, dan tautan luaran terkait.",
+      "#visitor-stats [data-i18n='visitorEyebrow']":"ANALITIK WEBSITE", "#visitor-stats [data-i18n='visitorTitle']":"Jejak kunjungan <em>global.</em>", "#visitor-stats [data-i18n='visitorDesc']":"Ringkasan kunjungan halaman dan negara asal pengunjung berdasarkan data yang tercatat.", "#visitor-stats [data-i18n='totalVisits']":"Total kunjungan", "#visitor-stats [data-i18n='totalVisitsNote']":"Akumulasi kunjungan yang tercatat", "#visitor-stats [data-i18n='countriesReached']":"Negara terjangkau", "#visitor-stats [data-i18n='countriesNote']":"Negara/wilayah terdeteksi", "#visitor-stats [data-i18n='topCountries']":"Negara asal pengunjung", "#visitor-stats [data-i18n='countryEstimate']":"Estimasi berdasarkan IP", "#visitor-stats [data-i18n='statsLoading']":"Statistik akan muncul setelah database statistik disiapkan.", "#visitor-stats [data-i18n='visitorDisclaimer']":"Statistik bersifat agregat. Negara diperkirakan dari alamat IP dan dapat tidak akurat. Pemblokir iklan, pengaturan privasi, atau gangguan layanan dapat memengaruhi pencatatan."
+    },
+    en: {
+      "a[href='#about']":"About", "a[href='#research']":"Research", "a[href='#locations']":"Research Sites", "a[href='#publications']":"Publications", "a[href='#media']":"Media", "a[href='#learning']":"Learning", "a[href='#contact']":"Contact <span>↗</span>",
+      ".eyebrow":"LECTURER · RESEARCHER · GEOSPATIAL PRACTITIONER",
+      "h1":"Understanding Earth through <em>geospatial data.</em>",
+      ".hero-lead":"I am Agus Aris, an academic in Remote Sensing and Geographic Information Systems. I explore satellite imagery, GIS, and artificial intelligence to understand environmental change, coastal ecosystems, and seaweed aquaculture.",
+      ".hero-actions .button":"Explore research <span>↘</span>",
+      ".hero-actions > .text-link:first-of-type":"Discuss collaboration <span>↗</span>",
+      ".hero-login-link":"Admin login to update this website <span>↗</span>",
+      ".section-about .eyebrow-green":"ABOUT ME", ".section-about h2":"Research driven by <em>real questions.</em>",
+      ".lead-copy":"My focus is to turn Earth observation data into spatial information that can be understood, tested, and used.",
+      ".section-research .section-heading h2":"Four directions of <em>exploration.</em>",
+      ".section-research .section-summary":"Themes connecting geospatial methods with environmental monitoring and decision-making needs.",
+      ".section-locations .section-heading h2":"Research on the <em>map.</em>",
+      ".section-locations .section-summary":"A map of research locations. Each point can include a location name, study summary, and links to related outputs.",
+      "#visitor-stats [data-i18n='visitorEyebrow']":"WEBSITE ANALYTICS", "#visitor-stats [data-i18n='visitorTitle']":"A global <em>visitor footprint.</em>", "#visitor-stats [data-i18n='visitorDesc']":"A summary of recorded page visits and the countries visitors come from.", "#visitor-stats [data-i18n='totalVisits']":"Total visits", "#visitor-stats [data-i18n='totalVisitsNote']":"Cumulative recorded visits", "#visitor-stats [data-i18n='countriesReached']":"Countries reached", "#visitor-stats [data-i18n='countriesNote']":"Countries/regions detected", "#visitor-stats [data-i18n='topCountries']":"Visitor countries", "#visitor-stats [data-i18n='countryEstimate']":"Estimated from IP address", "#visitor-stats [data-i18n='statsLoading']":"Statistics will appear after the statistics database is configured.", "#visitor-stats [data-i18n='visitorDisclaimer']":"Statistics are aggregated. Country is estimated from IP address and may be inaccurate. Ad blockers, privacy settings, or service interruptions may affect recording."
+    }
+  };
+  Object.assign(translations.id, {
+    ".section-publications .eyebrow-green":"LUARAN ILMIAH", ".section-publications h2":"Publikasi dengan <em>jejak yang jelas.</em>", ".section-publications .section-summary":"Bagian ini akan menampilkan artikel jurnal, prosiding, manuskrip, dataset, atau kode yang memiliki informasi bibliografi dan tautan sumber yang dapat diperiksa.",
+    ".section-media .section-heading h2":"Catatan dari <em>lapangan dan layar.</em>", ".section-media .section-summary":"Dokumentasi survei, visualisasi data, presentasi, dan cerita di balik proses penelitian.",
+    ".section-learning .section-heading h2":"Berbagi metode, <em>membangun kapasitas.</em>", ".section-learning .section-summary":"Modul, panduan praktik, materi kuliah, dan sumber belajar untuk penginderaan jauh serta sistem informasi geografis.",
+    ".section-contact .eyebrow-green":"KOLABORASI & PERTUKARAN ILMIAH", ".section-contact h2":"Ada pertanyaan spasial yang menarik untuk <em>ditelusuri?</em>", ".contact-copy":"Saya terbuka untuk pertukaran akademik dan potensi kolaborasi dalam penginderaan jauh, GIS, pemantauan pesisir, serta aplikasi geospasial.", "#contact-email":"Hubungi melalui email <span>↗</span>",
+    ".skip-link":"Lewati ke konten", ".search-label":"Cari lokasi", "#location-search":"Nama lokasi atau topik…", ".map-help":"Pilih titik di peta atau nama lokasi pada daftar untuk melihat detail dan tautan luaran.", ".footer-main p":"Observasi · Analisis · Pemahaman spasial", ".back-top":"KEMBALI KE ATAS ↑"
+  });
+  Object.assign(translations.en, {
+    ".section-publications .eyebrow-green":"RESEARCH OUTPUTS", ".section-publications h2":"Publications with a <em>traceable record.</em>", ".section-publications .section-summary":"This section features journal articles, proceedings, manuscripts, datasets, or code with verifiable bibliographic details and source links.",
+    ".section-media .section-heading h2":"Notes from the <em>field and screen.</em>", ".section-media .section-summary":"Survey documentation, data visualizations, presentations, and stories behind the research process.",
+    ".section-learning .section-heading h2":"Sharing methods, <em>building capacity.</em>", ".section-learning .section-summary":"Modules, practical guides, course materials, and learning resources for remote sensing and geographic information systems.",
+    ".section-contact .eyebrow-green":"COLLABORATION & SCHOLARLY EXCHANGE", ".section-contact h2":"Have an interesting spatial question to <em>explore?</em>", ".contact-copy":"I welcome academic exchange and potential collaboration in remote sensing, GIS, coastal monitoring, and geospatial applications.", "#contact-email":"Contact by email <span>↗</span>",
+    ".skip-link":"Skip to content", ".search-label":"Search locations", "#location-search":"Location name or topic…", ".map-help":"Select a map point or a location name in the list to view details and related outputs.", ".footer-main p":"Observation · Analysis · Spatial understanding", ".back-top":"BACK TO TOP ↑"
+  });
+
+  const languageButtons = $$("[data-lang]");
+  const originalTexts = new Map();
+  function setLanguage(lang) {
+    const chosen = translations[lang] ? lang : "id";
+    document.documentElement.lang = chosen;
+    Object.entries(translations[chosen]).forEach(([selector, html]) => {
+      const element = $(selector);
+      if (!element) return;
+      if (selector === "#location-search") { element.placeholder = html; return; }
+      if (!originalTexts.has(selector)) originalTexts.set(selector, element.innerHTML);
+      element.innerHTML = html;
+    });
+    languageButtons.forEach(button => {
+      const active = button.dataset.lang === chosen;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    try { localStorage.setItem("agusArisLanguage", chosen); } catch (_) {}
+  }
+  languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+  let savedLanguage = "id";
+  try { savedLanguage = localStorage.getItem("agusArisLanguage") || "id"; } catch (_) {}
+  setLanguage(savedLanguage);
+
   if (config.contactEmail && config.contactEmail.includes("@")) {
     const contact = $("#contact-email");
     if (contact) contact.href = `mailto:${config.contactEmail}?subject=${encodeURIComponent("Kolaborasi riset geospasial")}`;
@@ -187,8 +261,52 @@
   const search = $("#location-search");
   if (search) search.addEventListener("input", () => renderLocations(search.value));
 
+  // Public aggregated visitor counter. Requires the SQL setup in supabase_schema.sql.
+  async function updateVisitorStats() {
+    const totalEl = $("#visitor-total");
+    const countriesEl = $("#visitor-country-count");
+    const listEl = $("#visitor-countries");
+    if (!hasSupabaseConfig() || !supabaseClient) {
+      if (listEl) listEl.innerHTML = '<p class="empty-state">Statistik belum aktif. Jalankan SQL statistik pada panduan setup Supabase.</p>';
+      return;
+    }
+    try {
+      // Record one visit per browser tab session. Country is inferred from a public IP geolocation service.
+      let recorded = false;
+      try { recorded = sessionStorage.getItem("agusArisVisitRecorded") === "1"; } catch (_) {}
+      if (!recorded) {
+        let country = "Unknown";
+        try {
+          const response = await fetch("https://ipwho.is/", { cache: "no-store" });
+          const geo = await response.json();
+          if (geo && geo.success && geo.country) country = String(geo.country).slice(0, 80);
+        } catch (_) {}
+        const { error: recordError } = await supabaseClient.rpc("record_portfolio_visit", { p_country: country });
+        if (recordError) throw recordError;
+        try { sessionStorage.setItem("agusArisVisitRecorded", "1"); } catch (_) {}
+      }
+      const { data, error } = await supabaseClient.from("portfolio_visitor_stats").select("country, visits").order("visits", { ascending: false });
+      if (error) throw error;
+      const rows = data || [];
+      const total = rows.reduce((sum, row) => sum + Number(row.visits || 0), 0);
+      if (totalEl) totalEl.textContent = total.toLocaleString(document.documentElement.lang === "en" ? "en-US" : "id-ID");
+      if (countriesEl) countriesEl.textContent = String(rows.filter(row => row.country !== "Unknown").length);
+      if (listEl) {
+        const top = rows.filter(row => row.country && row.country !== "Unknown").slice(0, 9);
+        listEl.innerHTML = top.length ? top.map(row => `<div class="visitor-country"><span>${safe(row.country)}</span><strong>${Number(row.visits || 0).toLocaleString()}</strong></div>`).join("") : '<p class="empty-state">Belum ada data negara yang tercatat.</p>';
+      }
+    } catch (error) {
+      console.warn("Visitor statistics are not configured yet:", error);
+      if (listEl) listEl.innerHTML = '<p class="empty-state">Statistik belum tersedia. Pastikan SQL statistik sudah dijalankan di Supabase.</p>';
+    }
+  }
+
   initMap();
   loadData();
+  if (hasSupabaseConfig()) {
+    if (!supabaseClient) supabaseClient = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+    updateVisitorStats();
+  }
 
   if (hasSupabaseConfig()) {
     const interval = Number(config.refreshIntervalMs) || 60000;
