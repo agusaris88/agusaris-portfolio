@@ -8,6 +8,6 @@
 window.SITE_CONFIG = {
   supabaseUrl: "https://fqdgghsjedmudrgrtntz.supabase.co",
   supabaseAnonKey: "sb_publishable_4ZHd1MIJbCLtRrtm5QYn1w_9XmbIFsM",
-  contactEmail: "agusaris@unhas.ac.id",
+  contactEmail: "agus.aris@unhas.ac.id",
   refreshIntervalMs: 60000
 };
