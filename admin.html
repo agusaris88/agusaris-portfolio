@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5"><title>Admin Portfolio | Agus Aris</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/admin.css">
+  <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script><script defer src="assets/js/config.js"></script><script defer src="assets/js/admin.js"></script>
+</head>
+<body class="admin-body">
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">AA<span>.</span></span><span class="brand-text">AGUS ARIS<small>PORTFOLIO ADMIN</small></span></a><a class="text-link" href="index.html">← Lihat website <span>↗</span></a></div></header>
+  <main class="container admin-main">
+    <div class="admin-heading"><p class="eyebrow eyebrow-green">CONTENT MANAGEMENT</p><h1>Kelola portofolio <em>geospasial.</em></h1><p>Masuk untuk memperbarui titik penelitian, publikasi, media, dan materi pembelajaran. Perubahan akan muncul di website setelah tersimpan di database.</p></div>
+    <section id="setup-warning" class="setup-warning" hidden><strong>Database belum dikonfigurasi.</strong><p>Isi <code>supabaseUrl</code> dan <code>supabaseAnonKey</code> pada <code>assets/js/config.js</code>, lalu jalankan <code>supabase_schema.sql</code> di SQL Editor Supabase. Jangan masukkan service_role key.</p></section>
+    <section id="login-panel" class="admin-panel">
+      <h2>Login administrator</h2><p class="panel-note">Gunakan akun yang dibuat di Supabase Authentication. Jangan membuat password admin di kode website.</p>
+      <form id="login-form" class="admin-form"><label>Email<input type="email" id="login-email" required autocomplete="username" placeholder="email profesional"></label><label>Password<input type="password" id="login-password" required autocomplete="current-password" placeholder="Password akun admin"></label><button class="button button-dark" type="submit">Masuk <span>↗</span></button><p id="login-message" class="form-message" role="status"></p></form>
+    </section>
+    <section id="manager-panel" hidden>
+      <div class="manager-top"><div><p class="eyebrow eyebrow-green">ADMINISTRATOR</p><h2>Konten website</h2><p id="signed-in-as" class="panel-note"></p></div><button id="logout-button" class="button button-outline" type="button">Keluar</button></div>
+      <div class="admin-tabs" role="tablist"><button class="admin-tab active" data-kind="locations" type="button">Lokasi riset</button><button class="admin-tab" data-kind="publications" type="button">Publikasi</button><button class="admin-tab" data-kind="media" type="button">Media</button><button class="admin-tab" data-kind="learning" type="button">Pembelajaran</button></div>
+      <div class="manager-grid">
+        <section class="admin-panel"><div class="panel-title-row"><h2 id="editor-title">Tambah lokasi penelitian</h2><span class="required-note">* wajib</span></div><form id="content-form" class="admin-form"></form><div class="form-buttons"><button id="reset-form" class="button button-outline" type="button">Kosongkan</button><button id="save-form" class="button button-dark" type="submit" form="content-form">Simpan konten <span>↗</span></button></div><p id="save-message" class="form-message" role="status"></p></section>
+        <section class="admin-panel entries-panel"><div class="panel-title-row"><h2>Konten tersimpan</h2><span id="entry-count" class="entry-count">0 item</span></div><label class="search-label" for="entry-search">Cari konten</label><input id="entry-search" class="search-input" type="search" placeholder="Cari judul atau lokasi…"><div id="entries-list" class="entries-list"></div></section>
+      </div>
+    </section>
+    <div class="admin-footer"><span>Agus Aris · Academic Geospatial Portfolio</span><a href="index.html">Kembali ke website ↗</a></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta name="description" content="Agus Aris — Academic portfolio in remote sensing, GIS, AI for Earth observation, and coastal geospatial research at Hasanuddin University.">
+  <title>Agus Aris — Geospatial Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Agus Aris beranda">
+        <span class="brand-mark">AA<span>.</span></span>
+        <span class="brand-text">AGUS ARIS<small>ACADEMIC · GEOSPATIAL RESEARCH</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Buka navigasi" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#about">Profil</a>
+        <a href="#research">Riset</a>
+        <a href="#locations">Lokasi Riset</a>
+        <a href="#publications">Publikasi</a>
+        <a href="#media">Media</a>
+        <a href="#learning">Pembelajaran</a>
+        <a href="admin.html" class="nav-login">Login Admin ↗</a>
+        <a class="nav-contact" href="#contact">Kontak <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> DOSEN · PENELITI · PRAKTISI GEOSPASIAL</p>
+          <h1>Memahami bumi melalui <em>data geospasial.</em></h1>
+          <p class="hero-lead">Saya Agus Aris, akademisi di bidang Penginderaan Jauh dan Sistem Informasi Geografis. Saya mengeksplorasi pemanfaatan citra satelit, GIS, dan kecerdasan buatan untuk memahami perubahan lingkungan, ekosistem pesisir, dan budidaya rumput laut.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#research">Jelajahi bidang riset <span>↘</span></a>
+            <a class="text-link" href="#contact">Diskusi kolaborasi <span>↗</span></a>
+            <a class="text-link hero-login-link" href="admin.html">Login untuk memperbarui website <span>↗</span></a>
+          </div>
+          <div class="affiliation">
+            <span class="affiliation-mark">UNHAS</span>
+            <div><strong>Universitas Hasanuddin</strong><small>Fakultas Vokasi · Indonesia</small></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Ilustrasi kontur topografi dan data geospasial">
+          <div class="art-meta"><span>GEOSPATIAL NOTEBOOK / 01</span><span>INDONESIA</span></div>
+          <div class="contour-art">
+            <svg viewBox="0 0 560 500" role="img" aria-label="Ilustrasi garis kontur topografi" preserveAspectRatio="xMidYMid slice">
+              <defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1" fill="#9cae9e" opacity=".35"/></pattern></defs>
+              <rect width="560" height="500" fill="#e7ece4"/><rect width="560" height="500" fill="url(#dots)"/>
+              <g fill="none" stroke="#749583" stroke-width="1.1" opacity=".82">
+                <path d="M-40 82 C55 4 151 31 193 93 S319 183 372 92 510 14 605 79"/>
+                <path d="M-36 105 C56 28 137 51 177 111 S314 203 359 116 505 39 600 103"/>
+                <path d="M-32 128 C58 54 122 73 160 129 S309 222 346 140 500 63 596 127"/>
+                <path d="M-28 151 C58 79 107 96 143 147 S304 240 333 163 495 87 592 151"/>
+                <path d="M-24 174 C58 105 93 118 126 165 S299 258 320 186 490 111 588 175"/>
+                <path d="M-20 197 C58 130 79 141 109 183 S294 276 307 209 485 135 584 199"/>
+                <path d="M-15 220 C58 156 65 164 93 201 S289 294 294 232 480 159 579 223"/>
+                <path d="M-10 243 C58 181 51 187 76 219 S284 312 281 255 475 183 574 247"/>
+                <path d="M0 266 C58 206 38 210 60 237 S279 330 268 278 470 207 570 271"/>
+                <path d="M22 289 C70 232 26 232 44 255 S271 348 255 301 463 231 565 295"/>
+                <path d="M45 312 C80 258 20 254 29 273 S263 366 242 324 455 255 560 319"/>
+                <path d="M72 335 C93 285 16 278 15 292 S254 384 229 347 448 279 555 343"/>
+                <path d="M100 358 C108 311 15 301 5 311 S244 402 216 370 440 303 550 367"/>
+                <path d="M130 381 C125 338 16 324 -5 330 S234 420 203 393 432 327 545 391"/>
+                <path d="M163 404 C143 365 19 347 -15 349 S223 438 190 416 425 351 540 415"/>
+              </g>
+              <g fill="none" stroke="#b5a779" stroke-width="1.5" opacity=".85">
+                <path d="M95 0 C153 61 130 107 187 147 S264 216 229 267 221 376 294 500"/>
+                <path d="M121 0 C179 61 156 107 213 147 S290 216 255 267 247 376 320 500"/>
+                <path d="M147 0 C205 61 182 107 239 147 S316 216 281 267 273 376 346 500"/>
+              </g>
+              <g fill="#477d6b"><circle cx="308" cy="205" r="5"/><circle cx="308" cy="205" r="13" fill="none" stroke="#477d6b" opacity=".5"/><circle cx="404" cy="309" r="4"/><circle cx="404" cy="309" r="12" fill="none" stroke="#477d6b" opacity=".45"/></g>
+              <g font-family="monospace" font-size="10" fill="#48695b"><text x="326" y="202">FIELD SITE 01</text><text x="421" y="307">OBSERVATION</text><text x="26" y="462">TOPOGRAPHIC STUDY / CONCEPTUAL VISUAL</text></g>
+            </svg>
+            <div class="art-caption"><span>REMOTE SENSING</span><span>GIS</span><span>SPATIAL INTELLIGENCE</span></div>
+          </div>
+          <p class="art-footnote">Menghubungkan observasi lapangan, citra satelit, dan analisis spasial.</p>
+        </div>
+      </div>
+      <div class="container hero-bottom"><span>PROFIL AKADEMIK & PORTOFOLIO RISET</span><span>MAKASSAR · INDONESIA</span></div>
+    </section>
+
+    <section class="section section-about" id="about">
+      <div class="container two-col">
+        <div class="section-label"><span>01 / PROFIL</span><i></i></div>
+        <div>
+          <p class="eyebrow eyebrow-green">TENTANG SAYA</p>
+          <h2>Riset yang berangkat dari <em>pertanyaan nyata.</em></h2>
+          <div class="prose-grid">
+            <p class="lead-copy">Fokus saya adalah mengubah data observasi bumi menjadi informasi spasial yang dapat dipahami, diuji, dan digunakan.</p>
+            <div class="body-copy">
+              <p>Saya berafiliasi dengan Program Studi Sarjana Terapan Penginderaan Jauh dan Sistem Informasi Geografis, Fakultas Vokasi, Universitas Hasanuddin.</p>
+              <p>Ketertarikan riset saya meliputi pemetaan berbasis citra satelit, analisis spasial, pemanfaatan AI untuk data penginderaan jauh, pemantauan ekosistem pesisir, serta pengembangan aplikasi WebGIS.</p>
+              <p>Website ini menjadi ruang terbuka untuk mendokumentasikan tema penelitian, publikasi yang terverifikasi, lokasi studi, materi pembelajaran, dan media ilmiah.</p>
+            </div>
+          </div>
+          <div class="fact-strip"><div><b>01</b><span>Earth observation</span></div><div><b>02</b><span>Spatial analytics</span></div><div><b>03</b><span>Coastal applications</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-research" id="research">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow eyebrow-green">02 / BIDANG RISET</p><h2>Empat arah <em>eksplorasi.</em></h2></div><p class="section-summary">Tema yang menghubungkan metode geospasial dengan kebutuhan pemantauan lingkungan dan pengambilan keputusan.</p></div>
+        <div class="research-grid">
+          <article class="research-card"><span class="card-index">R — 01</span><div class="research-icon icon-satellite">◉</div><h3>Remote Sensing & Earth Observation</h3><p>Pemanfaatan citra optik dan radar untuk pemetaan tutupan lahan, habitat perairan dangkal, dan perubahan lingkungan.</p><div class="tag-row"><span>PlanetScope</span><span>Sentinel-2</span><span>Landsat</span><span>SAR</span></div></article>
+          <article class="research-card"><span class="card-index">R — 02</span><div class="research-icon icon-ai">⌘</div><h3>AI for Earth Observation</h3><p>Eksplorasi machine learning untuk klasifikasi citra, ekstraksi informasi, dan analisis perubahan secara terukur.</p><div class="tag-row"><span>Random Forest</span><span>Machine learning</span><span>Validation</span></div></article>
+          <article class="research-card"><span class="card-index">R — 03</span><div class="research-icon icon-coast">≈</div><h3>Coastal Ecosystems & Blue Carbon</h3><p>Pemetaan habitat pesisir dan pengembangan informasi spasial untuk mendukung pemantauan ekosistem.</p><div class="tag-row"><span>Seagrass</span><span>Coastal change</span><span>Blue carbon</span></div></article>
+          <article class="research-card"><span class="card-index">R — 04</span><div class="research-icon icon-seaweed">⌁</div><h3>Seaweed Aquaculture & Spatial Planning</h3><p>Analisis distribusi kawasan budidaya rumput laut dan pengembangan informasi untuk perencanaan berbasis spasial.</p><div class="tag-row"><span>Site mapping</span><span>Monitoring</span><span>Decision support</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-locations" id="locations">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow eyebrow-green">03 / WEBGIS PENELITIAN</p><h2>Riset pada <em>peta.</em></h2></div><p class="section-summary">Peta sebaran lokasi penelitian. Setiap titik dapat memuat nama lokasi, ringkasan studi, dan tautan luaran terkait.</p></div>
+        <div class="webgis-toolbar"><div><span class="live-dot"></span><strong>Research Locations WebGIS</strong><small id="map-data-status">Memuat data lokasi…</small></div><div class="map-legend"><span><i class="legend-point"></i> Lokasi penelitian</span><span id="location-count">0 lokasi</span></div></div>
+        <div class="map-shell"><div id="research-map" aria-label="Peta interaktif lokasi penelitian"></div><aside class="map-sidebar"><div class="sidebar-head"><span>INDEKS LOKASI</span><span id="sidebar-count">00</span></div><label class="search-label" for="location-search">Cari lokasi</label><input id="location-search" class="search-input" type="search" placeholder="Nama lokasi atau topik…"><div id="location-list" class="location-list"><p class="empty-state">Memuat daftar lokasi…</p></div><p class="map-help">Pilih titik di peta atau nama lokasi pada daftar untuk melihat detail dan tautan luaran.</p></aside></div>
+        <p class="section-footnote">Koordinat dan informasi yang ditampilkan perlu diperiksa sebelum digunakan sebagai referensi ilmiah. Data contoh awal dapat diganti melalui konfigurasi atau panel admin setelah layanan database dihubungkan.</p>
+      </div>
+    </section>
+
+    <section class="section section-publications" id="publications">
+      <div class="container two-col">
+        <div class="section-label"><span>04 / PUBLIKASI</span><i></i></div>
+        <div>
+          <p class="eyebrow eyebrow-green">LUARAN ILMIAH</p><h2>Publikasi dengan <em>jejak yang jelas.</em></h2>
+          <p class="section-summary wide-summary">Bagian ini akan menampilkan artikel jurnal, prosiding, manuskrip, dataset, atau kode yang memiliki informasi bibliografi dan tautan sumber yang dapat diperiksa.</p>
+          <div id="publication-list" class="publication-list"><p class="empty-state">Publikasi terverifikasi akan ditampilkan di sini setelah data ditambahkan.</p></div>
+          <a class="text-link" href="#contact">Usulkan kolaborasi publikasi <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-media" id="media">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow eyebrow-green">05 / MEDIA</p><h2>Catatan dari <em>lapangan dan layar.</em></h2></div><p class="section-summary">Dokumentasi survei, visualisasi data, presentasi, dan cerita di balik proses penelitian.</p></div>
+        <div id="media-grid" class="media-grid"><p class="empty-state">Media akan muncul di sini setelah foto atau tautan ditambahkan.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-learning" id="learning">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow eyebrow-green">06 / PEMBELAJARAN</p><h2>Berbagi metode, <em>membangun kapasitas.</em></h2></div><p class="section-summary">Modul, panduan praktik, materi kuliah, dan sumber belajar untuk penginderaan jauh serta sistem informasi geografis.</p></div>
+        <div id="learning-grid" class="learning-grid"><p class="empty-state">Materi pembelajaran akan ditampilkan di sini setelah ditambahkan.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact">
+      <div class="container two-col">
+        <div class="section-label"><span>07 / KONTAK</span><i></i></div>
+        <div><p class="eyebrow eyebrow-green">KOLABORASI & PERTUKARAN ILMIAH</p><h2>Ada pertanyaan spasial yang menarik untuk <em>ditelusuri?</em></h2><p class="contact-copy">Saya terbuka untuk pertukaran akademik dan potensi kolaborasi dalam penginderaan jauh, GIS, pemantauan pesisir, serta aplikasi geospasial.</p><div class="contact-actions"><a class="button button-dark" id="contact-email" href="mailto:ADD_YOUR_EMAIL_HERE?subject=Kolaborasi%20Riset">Hubungi melalui email <span>↗</span></a><a class="text-link" href="https://www.unhas.ac.id/" target="_blank" rel="noreferrer">Universitas Hasanuddin <span>↗</span></a></div><p class="section-footnote">Ganti email contoh sebelum website dipublikasikan.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="#home"><span class="brand-mark">AA<span>.</span></span><span class="brand-text">AGUS ARIS<small>ACADEMIC · GEOSPATIAL RESEARCH</small></span></a><p>Observasi · Analisis · Pemahaman spasial</p><a href="#home" class="back-top">KEMBALI KE ATAS ↑</a></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Agus Aris</span><span>Remote Sensing · GIS · Geospatial Intelligence</span><span>GitHub Pages</span></div></footer>
+</body>
+</html>
